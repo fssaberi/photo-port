@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Nav(props) {
-    useEffect(() => {
-        document.title = capitalizeFirstLetter(currentCategory.name);
-    }, [currentCategory]);
     const {
         categories = [],
         setCurrentCategory,
@@ -29,7 +26,7 @@ function Nav(props) {
                     </li>
                         {categories.map((category) => (
                             <li 
-                                className={`"mx-1" ${currentCategory.name === category.name && 'navActive'}`}
+                                className={`"mx-1" ${currentCategory.name === category.name}`}
                                 key={category.name}
                             >
                                 <span onClick={() => {
